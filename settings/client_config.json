@@ -1,0 +1,13 @@
+{
+  "analyze": [
+    "--skip", "skip_check.txt",
+    "--disable", "clang-diagnostic-reserved-identifier",
+    "--disable", "optin.cplusplus.VirtualCall",
+    "--disable", "cppcheck-uninitMemberVar",
+    "--disable", "clang-diagnostic-double-promotion",
+    "--disable", "clang-diagnostic-float-conversion",
+    "--disable", "cppcheck-duplInheritedMember"
+  ]
+}
+
+

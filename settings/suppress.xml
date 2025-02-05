@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<SuppressionList>
+    <Suppress checker="clang-diagnostic-reserved-identifier"/>
+    <Suppress checker="optin.cplusplus.VirtualCall"/>
+    <Suppress checker="cppcheck-uninitMemberVar"/>
+    <Suppress checker="clang-diagnostic-double-promotion"/>
+    <Suppress checker="clang-diagnostic-float-conversion"/>
+    <Suppress checker="cppcheck-duplInheritedMember"/>
+</SuppressionList>
