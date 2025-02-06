@@ -41,7 +41,8 @@ The output of the above command will be a folder that includes reports on all th
 Finally we will upload this report to the server through the following command.
 
 ```
-CodeChecker store output --name=fix_06_02 --url=http://localhost:8001/DUNE_CFIX
+  CodeChecker store output --name=run_name --url=http://host_server_ip:port_server/product_name
 ```
-
+These arguments are important so pay attention! The way reports are divided and related to each other are through [products](https://codechecker.readthedocs.io/en/latest/web/products/) which have different runs. Let's say you are analyzing different branches from DUNE. Ideally you would divide each branch into different produts. In the case you are analyzing the same branch but with new changes made you would upload the reports to the same product with a different name. 
+To choose the product name and server location you should edit the `--url` and to differentiate between runs you should change the `--name` parameter.  
 
