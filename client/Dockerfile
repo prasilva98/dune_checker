@@ -47,7 +47,7 @@ COPY /settings /opt/codechecker
 
 # Clone the repository for analysis
 FROM base AS clone_repo
-RUN git clone -b codechecker/fixes https://github.com/LSTS/dune.git /opt/dune/source 
+RUN git clone -b feature/dune-emperor https://github.com/elcapitanu/dune.git /opt/dune/source 
 
 WORKDIR /opt/dune 
 RUN mkdir /opt/dune/build && \
@@ -60,4 +60,4 @@ RUN CodeChecker analyze compile_commands.json --config client_config.json -o out
 
 FROM clone_repo AS pub_data
 
-CMD ["CodeChecker", "store", "output", "--name=", "--url=http://10.0.0.15:8001/DUNE"]
+CMD ["CodeChecker", "store", "output", "--name=", "--url=http://10.0.0.15:8001/Default"]
