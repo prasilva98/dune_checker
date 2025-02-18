@@ -1,0 +1,36 @@
+---
+name: codechecker-web
+
+services:
+  server:
+    # v6.24.5 and upper have ain issue calling from outside localhost
+    # image: codechecker/codechecker-web:6.24.6  
+    image: codechecker/codechecker-web:6.24.4
+    # container_name: codechecker-web
+    ports:
+      - 8001:8001
+    volumes:
+      - ./data/workspace:/workspace
+#    networks:
+#      - frontend
+    restart: unless-stopped
+#    labels:
+#      - "traefik.enable=true"
+#      - "traefik.docker.network=frontend"
+#      - "traefik.http.middlewares.${COMPOSE_PROJECT_NAME:-codechecker-web}-checker-redirectscheme.redirectscheme.scheme=https"
+#      - "traefik.http.middlewares.${COMPOSE_PROJECT_NAME:-codechecker-web}-checker-redirectscheme.redirectscheme.permanent=true"
+#      - "traefik.http.services.${COMPOSE_PROJECT_NAME:-codechecker-web}-checker-svc.loadbalancer.server.port=8081"
+#      - "traefik.http.services.${COMPOSE_PROJECT_NAME:-codechecker-web}-checker-svc.loadbalancer.server.scheme=http"
+#      - "traefik.http.routers.${COMPOSE_PROJECT_NAME:-codechecker-web}-checker-https.entrypoints=websecure"
+#      - "traefik.http.routers.${COMPOSE_PROJECT_NAME:-codechecker-web}-checker-https.rule=Host(`codechecker.bird.lsts.pt`)"  # <-- Replace with your FQDN
+#      - "traefik.http.routers.${COMPOSE_PROJECT_NAME:-codechecker-web}-checker-https.service=${COMPOSE_PROJECT_NAME:-codechecker-web}-checker-svc"
+#      - "traefik.http.routers.${COMPOSE_PROJECT_NAME:-codechecker-web}-checker-https.tls=true"
+#      - "traefik.http.routers.${COMPOSE_PROJECT_NAME:-codechecker-web}-checker-https.tls.certresolver=production"  # <-- Replace with your certresolver
+
+#networks:
+#  frontend:
+#    external: true
+#  backend:
+#    # external: true
+#    driver: bridge
+
