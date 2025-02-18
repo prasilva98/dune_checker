@@ -1,6 +1,3 @@
----
-name: codechecker-web
-
 services:
   server:
     # v6.24.5 and upper have ain issue calling from outside localhost
