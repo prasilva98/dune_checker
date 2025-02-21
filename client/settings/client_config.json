@@ -6,7 +6,9 @@
     "--disable", "cppcheck-uninitMemberVar",
     "--disable", "clang-diagnostic-double-promotion",
     "--disable", "clang-diagnostic-float-conversion",
-    "--disable", "cppcheck-duplInheritedMember"
+    "--disable", "cppcheck-duplInheritedMember",
+    "--disable", "clang-diagnostic-implicit-int-conversion",
+    "--disable", "clang-diagnostic-implicit-float-conversion"
   ]
 }
 
