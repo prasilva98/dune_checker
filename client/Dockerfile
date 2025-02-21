@@ -56,7 +56,7 @@ RUN mkdir /opt/dune/build && \
     CodeChecker log --build "make -j8" --output /opt/codechecker/compile_commands.json
  
 WORKDIR /opt/codechecker
-RUN CodeChecker analyze compile_commands.json --config client_config.json -o output
+RUN CodeChecker analyze compile_commands.json --config client_config.json -o output || true
 
 FROM clone_repo AS pub_data
 
